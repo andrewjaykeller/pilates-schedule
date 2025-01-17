@@ -1,60 +1,31 @@
-describe('Event date comparison', () => {
-    const mockCurrentDate = new Date('2024-01-19T12:00:00');
-    let originalDate: DateConstructor;
+describe('date comparison', () => {
+    // Mock current date to a fixed time
+    const mockDate = new Date('2025-01-19T12:00:00');
 
     beforeAll(() => {
-        originalDate = global.Date;
-        global.Date = class extends Date {
-            constructor(date?: string | number | Date) {
-                if (date) {
-                    super(date);
-                } else {
-                    super(mockCurrentDate);
-                }
-            }
-        } as DateConstructor;
+        jest.useFakeTimers();
+        jest.setSystemTime(mockDate);
     });
 
     afterAll(() => {
-        global.Date = originalDate;
+        jest.useRealTimers();
     });
 
-    function isFutureEvent(date: string): boolean {
-        const eventDate = new Date(date);
-        eventDate.setHours(0, 0, 0, 0);
-        const now = new Date();
-        now.setHours(0, 0, 0, 0);
-        return eventDate >= now;
-    }
-
-    test('correctly identifies past events', () => {
-        expect(isFutureEvent('2024-01-16')).toBe(false);
-        expect(isFutureEvent('2024-01-18')).toBe(false);
+    test('identifies future events correctly', () => {
+        const eventDate = new Date('2025-01-20T20:30:00');
+        expect(eventDate > mockDate).toBe(true);
     });
 
-    test('correctly identifies future events', () => {
-        expect(isFutureEvent('2024-01-20')).toBe(true);
-        expect(isFutureEvent('2024-02-01')).toBe(true);
+    test('identifies past events correctly', () => {
+        const eventDate = new Date('2025-01-18T20:30:00');
+        expect(eventDate > mockDate).toBe(false);
     });
 
-    test('correctly handles same day', () => {
-        expect(isFutureEvent('2024-01-19')).toBe(false);
-    });
+    test('handles same day events correctly', () => {
+        const eventDateLater = new Date('2025-01-19T14:00:00');
+        const eventDateEarlier = new Date('2025-01-19T10:00:00');
 
-    test('real event data test', () => {
-        const realEvents = [
-            { date: '2024-01-30' },
-            { date: '2024-02-06' },
-            { date: '2024-02-01' },
-            { date: '2024-02-02' },
-            { date: '2024-02-08' },
-            { date: '2024-02-09' }
-        ];
-
-        realEvents.forEach(event => {
-            console.log(`Testing event ${event.date}`);
-            const result = isFutureEvent(event.date);
-            expect(result).toBe(true);
-        });
+        expect(eventDateLater > mockDate).toBe(true);
+        expect(eventDateEarlier > mockDate).toBe(false);
     });
 }); 

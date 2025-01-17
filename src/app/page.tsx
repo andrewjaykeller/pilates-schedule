@@ -38,7 +38,7 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const events: Event[] = [
     {
-      date: '2024-01-16',
+      date: '2025-01-16',
       time: '8:30 PM',
       time24h: '20:30',
       location: 'BodyRok Polk',
@@ -47,7 +47,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-01-20',
+      date: '2025-01-20',
       time: '8:30 PM',
       time24h: '20:30',
       location: 'Polk BodyRok',
@@ -56,7 +56,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-01-27',
+      date: '2025-01-27',
       time: '8:30 PM',
       time24h: '20:30',
       location: 'Polk BodyRok',
@@ -65,7 +65,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-01-30',
+      date: '2025-01-30',
       time: '8:30 PM',
       time24h: '20:30',
       location: 'Polk BodyRok',
@@ -74,7 +74,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-02-06',
+      date: '2025-02-06',
       time: '8:30 PM',
       time24h: '20:30',
       location: 'Polk BodyRok',
@@ -83,7 +83,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-02-01',
+      date: '2025-02-01',
       time: '2:00 PM',
       time24h: '14:00',
       location: 'FiDi BodyRok',
@@ -92,7 +92,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-02-02',
+      date: '2025-02-02',
       time: '4:00 PM',
       time24h: '16:00',
       location: 'FiDi BodyRok',
@@ -101,7 +101,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-02-08',
+      date: '2025-02-08',
       time: '2:00 PM',
       time24h: '14:00',
       location: 'FiDi BodyRok',
@@ -110,7 +110,7 @@ export default function Home() {
       isFull: false
     },
     {
-      date: '2024-02-09',
+      date: '2025-02-09',
       time: '4:00 PM',
       time24h: '16:00',
       location: 'FiDi BodyRok',
@@ -147,17 +147,35 @@ export default function Home() {
   }
 
   const today = new Date();
+  
+  console.log('\n=== Date Comparison Debug ===');
+  console.log('Current date/time (local):', today.toLocaleString());
+  console.log('Current date/time (UTC):', today.toUTCString());
+  console.log('================================\n');
 
   const futureEvents = events.filter(event => {
-    // Parse the 24h time
-    const [hours, minutes] = event.time24h.split(':');
-    
-    // Create event date with correct time
+    // Create event date with time in local timezone
+    const [hours, minutes] = event.time24h.split(':').map(Number);
     const eventDate = new Date(event.date);
-    eventDate.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+    eventDate.setHours(hours, minutes, 0, 0);
     
-    return eventDate >= today;
+    console.log(`\nComparing event: ${event.classType}`);
+    console.log('Event date string:', event.date);
+    console.log('Event time (12h):', event.time);
+    console.log('Event time (24h):', event.time24h);
+    console.log('Event date (local):', eventDate.toLocaleString());
+    console.log('Event date (UTC):', eventDate.toUTCString());
+    console.log('Current time:', today.toLocaleString());
+    console.log('Is in future?', eventDate > today);
+    console.log('Time difference (hours):', Math.round((eventDate.getTime() - today.getTime()) / (1000 * 60 * 60)));
+    
+    return eventDate > today;
   });
+
+  console.log('\n=== Summary ===');
+  console.log('Total events:', events.length);
+  console.log('Future events:', futureEvents.length);
+  console.log('================\n');
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-rose-50 via-violet-50 to-teal-50 px-4 py-8 md:py-12">
@@ -189,7 +207,7 @@ export default function Home() {
                       {event.location}
                     </h3>
                     <div className="text-gray-500 mt-2 font-light tracking-wide">
-                      {new Date(event.date).toLocaleDateString('en-US', {
+                      {new Date(`${event.date}T${event.time24h}:00`).toLocaleDateString('en-US', {
                         weekday: 'long',
                         month: 'long',
                         day: 'numeric'

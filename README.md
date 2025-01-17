@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✨ Free Pilates with AJ
+
+A minimalist, modern scheduling app for free Pilates classes. Built with Next.js and styled with Tailwind CSS, featuring a clean wellness-focused design.
+
+## Features
+
+- 🗓️ Dynamic class listing with future event filtering
+- 💫 Modern, mobile-first design with wellness aesthetics
+- 🎟️ Direct Partiful integration for class registration
+- 🔄 Real-time class availability status
+- 📱 Responsive layout optimized for all devices
+
+## Tech Stack
+
+- Next.js 15 with App Router
+- Tailwind CSS for styling
+- TypeScript for type safety
+- Bun as the JavaScript runtime
+- date-fns for date manipulation
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+bun install
+
+# Run the development server
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Uses modern date comparison logic for event filtering
+- Implements a clean, wellness-focused UI inspired by modern fitness apps
+- Features a soft gradient background with frosted-glass card effects
+- Mobile-optimized with thoughtful touch targets and spacing
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    page.tsx      # Main scheduling page
+    layout.tsx    # Root layout with metadata
+    globals.css   # Global styles
+public/
+  favicon.svg     # Custom star favicon
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This is a personal project for scheduling Pilates classes. Feel free to fork and adapt for your own use!
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+🌟 Check out the code on [GitHub](https://github.com/andrewjaykeller/pilates-schedule)

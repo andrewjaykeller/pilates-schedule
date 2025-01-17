@@ -70,3 +70,18 @@ This project was developed in collaboration with Claude 3.5 Sonnet, an AI assist
 - Bug fixes and code improvements
 
 While the AI provided suggestions and implementations, all code was reviewed and approved by the human developer before deployment.
+
+## Deployment
+
+This site is deployed on Netlify. To deploy your own version:
+
+1. Fork this repository
+2. Sign up for [Netlify](https://www.netlify.com)
+3. Create a new site from Git
+4. Connect your forked repository
+5. Configure the build settings:
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+6. Deploy! 🚀
+
+Note: Netlify will automatically detect that this is a Next.js site and set up most configurations for you.

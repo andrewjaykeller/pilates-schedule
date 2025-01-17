@@ -59,3 +59,14 @@ MIT
 
 ---
 🌟 Check out the code on [GitHub](https://github.com/andrewjaykeller/pilates-schedule)
+
+## AI Contribution
+
+This project was developed in collaboration with Claude 3.5 Sonnet, an AI assistant. The AI contributed to:
+- Initial project setup and structure
+- Implementation of date comparison logic and testing
+- UI/UX design decisions and implementation
+- Documentation and README creation
+- Bug fixes and code improvements
+
+While the AI provided suggestions and implementations, all code was reviewed and approved by the human developer before deployment.

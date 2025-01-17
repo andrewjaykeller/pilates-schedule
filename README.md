@@ -85,3 +85,33 @@ This site is deployed on Netlify. To deploy your own version:
 6. Deploy! 🚀
 
 Note: Netlify will automatically detect that this is a Next.js site and set up most configurations for you.
+
+## Requirements
+
+- Node.js 18 or later
+- npm or Bun package manager
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```bash
+# Required for social share images and metadata
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+## Troubleshooting
+
+### Date Comparison Issues
+- If events aren't showing up, check your system timezone against the event times
+- The app uses UTC internally for consistency
+- All dates are compared at midnight for "future" status
+
+### Testing
+- Tests use a mocked date (2024-01-19) for consistent results
+- Run `bun test` to check date comparison logic
+- Run `bun test:watch` for development
+
+### Common Issues
+- If you see SWC dependency warnings, run `npm install` to patch them
+- For date-fns import errors, try `npm install date-fns` instead of using Bun

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fce7f3"/>
+      <stop offset="100%" stop-color="#ccfbf1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Star -->
+  <g transform="translate(500,200) scale(2)">
+    <path d="M9.153 5.408C9.565 4.776 10.435 4.776 10.847 5.408L13.145 8.847C13.394 9.228 13.803 9.474 14.251 9.523L18.377 9.97C19.107 10.063 19.398 10.967 18.874 11.482L16.326 13.974C16.012 14.282 15.867 14.722 15.929 15.158L16.461 19.18C16.568 19.93 15.818 20.485 15.163 20.111L11.546 18.108C11.153 17.885 10.681 17.885 10.288 18.108L6.67 20.111C6.015 20.485 5.265 19.93 5.372 19.18L5.904 15.158C5.966 14.722 5.821 14.282 5.507 13.974L2.959 11.482C2.435 10.967 2.726 10.063 3.456 9.97L7.582 9.523C8.03 9.474 8.439 9.228 8.688 8.847L9.153 5.408Z" fill="#fcd34d" stroke="#fcd34d" stroke-width="2"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, -apple-system" font-size="72" font-weight="bold" fill="#1f2937">
+    Free Pilates with AJ
+  </text>
+  <text x="600" y="480" text-anchor="middle" font-family="system-ui, -apple-system" font-size="36" fill="#4b5563">
+    Join our mindful movement practice
+  </text>
+</svg> 

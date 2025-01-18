@@ -71,7 +71,7 @@ export default function Home() {
       location: 'Polk BodyRok',
       link: 'https://partiful.com/e/NU2GMs3I8Qfj662YVEgG',
       classType: 'Six Packs & Backs',
-      isFull: false
+      isFull: true
     },
     {
       date: '2025-02-06',
@@ -89,7 +89,7 @@ export default function Home() {
       location: 'FiDi BodyRok',
       link: 'https://partiful.com/e/DwIN72dwkGnPBcqFDL5J',
       classType: 'Flow',
-      isFull: false
+      isFull: true
     },
     {
       date: '2025-02-02',
@@ -98,7 +98,7 @@ export default function Home() {
       location: 'FiDi BodyRok',
       link: 'https://partiful.com/e/NaSaPXJ0jCOSg7aKfcp6',
       classType: 'Cardio Sculpt',
-      isFull: false
+      isFull: true
     },
     {
       date: '2025-02-08',

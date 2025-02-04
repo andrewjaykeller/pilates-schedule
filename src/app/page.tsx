@@ -92,13 +92,13 @@ export default function Home() {
       isFull: true
     },
     {
-      date: '2025-02-02',
-      time: '4:00 PM',
-      time24h: '16:00',
-      location: 'FiDi BodyRok',
-      link: 'https://partiful.com/e/NaSaPXJ0jCOSg7aKfcp6',
-      classType: 'Cardio Sculpt',
-      isFull: true
+      date: '2025-02-06',
+      time: '8:30 PM',
+      time24h: '20:30',
+      location: 'Polk BodyRok',
+      link: 'https://partiful.com/e/zLNrYEyFkl7PwJb1APbO',
+      classType: 'Buns & Guns',
+      isFull: false
     },
     {
       date: '2025-02-08',

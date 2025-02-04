@@ -74,15 +74,6 @@ export default function Home() {
       isFull: true
     },
     {
-      date: '2025-02-06',
-      time: '8:30 PM',
-      time24h: '20:30',
-      location: 'Polk BodyRok',
-      link: 'https://partiful.com/e/zLNrYEyFkl7PwJb1APbO',
-      classType: 'Buns and Guns',
-      isFull: false
-    },
-    {
       date: '2025-02-01',
       time: '2:00 PM',
       time24h: '14:00',

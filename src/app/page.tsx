@@ -99,15 +99,6 @@ export default function Home() {
       link: 'https://partiful.com/e/qfPSGPhGwpoAPtcBSsBb',
       classType: 'Rok Your Body 2',
       isFull: false
-    },
-    {
-      date: '2025-02-09',
-      time: '4:00 PM',
-      time24h: '16:00',
-      location: 'FiDi BodyRok',
-      link: 'https://partiful.com/e/bMKd74sHqShIiUSfPJM0',
-      classType: 'Core & Cardio',
-      isFull: false
     }
   ];
 
